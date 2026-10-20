@@ -3,1064 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080811">
-  <meta name="description" content="Welcome to INFINITE IQ — creativity, technology, and limitless possibilities.">
-  <title>INFINITE IQ | Think Beyond Limits</title>
-
+  <meta name="theme-color" content="#070b16">
+  <meta name="description" content="INFINITE IQ explores bold ideas, intelligent tools, and digital experiences designed to make tomorrow better.">
+  <title>INFINITE IQ — Think Beyond Limits</title>
   <style>
-    /* ===== 1. GLOBAL STYLES ===== */
     :root {
-      --bg: #080811;
-      --surface: #10101d;
-      --surface-light: #171729;
-      --text: #f5f5ff;
-      --muted: #a2a2bb;
-      --purple: #9b5cff;
-      --blue: #52a5ff;
-      --border: rgba(255, 255, 255, 0.09);
-      --gradient: linear-gradient(110deg, #a855f7, #4f8cff);
+      color-scheme: dark;
+      --bg: #070b16;
+      --panel: #101729;
+      --text: #f4f7ff;
+      --muted: #a2aec5;
+      --cyan: #61f4e5;
+      --purple: #a78bfa;
+      --line: rgba(255,255,255,.11);
+      --max: 1120px;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: var(--bg);
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(91,70,190,.18), transparent 35%),
+        radial-gradient(ellipse at 0% 35%, rgba(36,191,191,.09), transparent 32%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input, textarea {
-      font: inherit;
-    }
-
-    button, a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: 0 auto;
-    }
-
-    .gradient-text {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .section {
-      padding: 100px 0;
-      scroll-margin-top: 85px;
-    }
-
-    .section-heading {
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.2;
-      letter-spacing: -1.5px;
-      margin-bottom: 16px;
-    }
-
-    .section-description {
-      color: var(--muted);
-      max-width: 600px;
-      margin-bottom: 42px;
-    }
-
-    .eyebrow {
-      color: #bd91ff;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 0.76rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    /* ===== 2. NAVIGATION ===== */
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: auto; }
     header {
-      position: fixed;
-      inset: 0 0 auto;
-      z-index: 1000;
-      background: rgba(8, 8, 17, 0.82);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(7,11,22,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
     }
-
-    nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
+    nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 850; letter-spacing: 1.5px; }
     .logo {
-      font-size: 1.15rem;
-      font-weight: 900;
-      letter-spacing: 1px;
-      white-space: nowrap;
+      width: 37px; height: 37px; display: grid; place-items: center;
+      border-radius: 12px; color: #07111b; font-weight: 950;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      box-shadow: 0 0 24px rgba(97,244,229,.17);
     }
-
-    .logo span {
-      color: var(--purple);
+    .navlinks { display: flex; align-items: center; gap: 26px; color: var(--muted); font-size: 14px; }
+    .navlinks a:hover, .footer-links a:hover { color: var(--cyan); }
+    .nav-cta { padding: 10px 15px; border: 1px solid var(--line); border-radius: 10px; color: var(--text); }
+    .hero { padding: 104px 0 85px; position: relative; overflow: hidden; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--cyan); font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 12px var(--cyan); }
+    h1 { max-width: 850px; margin: 22px 0; font-size: clamp(46px, 8vw, 88px); line-height: .99; letter-spacing: -4px; font-weight: 850; }
+    .gradient { background: linear-gradient(100deg, var(--cyan), #a9b9ff 55%, var(--purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { max-width: 650px; color: var(--muted); font-size: clamp(17px, 2vw, 20px); }
+    .actions { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 10px; padding: 13px 19px; border-radius: 12px; font-weight: 750; font-size: 14px; transition: transform .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .primary { background: var(--cyan); color: #07111b; }
+    .secondary { border: 1px solid var(--line); background: rgba(255,255,255,.025); }
+    .hero-foot { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 48px; color: var(--muted); font-size: 13px; }
+    .hero-foot span::before { content: "✦"; color: var(--cyan); margin-right: 8px; }
+    section { padding: 76px 0; }
+    .section-head { max-width: 680px; margin-bottom: 32px; }
+    .section-head h2 { margin: 13px 0; font-size: clamp(30px, 5vw, 48px); line-height: 1.12; letter-spacing: -1.7px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .card { min-height: 225px; padding: 25px; border: 1px solid var(--line); border-radius: 19px; background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012)); transition: transform .22s, border-color .22s; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(97,244,229,.4); }
+    .icon { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 14px; margin-bottom: 24px; font-size: 21px; background: rgba(97,244,229,.09); border: 1px solid rgba(97,244,229,.16); }
+    .card h3 { margin: 0 0 9px; font-size: 20px; }
+    .card p { color: var(--muted); margin: 0; font-size: 14px; }
+    .tag { display: inline-block; margin-top: 18px; color: var(--cyan); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; padding: 35px; border: 1px solid var(--line); border-radius: 24px; background: rgba(16,23,41,.75); }
+    .feature h2 { margin: 14px 0; font-size: clamp(30px, 4vw, 45px); line-height: 1.1; letter-spacing: -1.5px; }
+    .feature p { color: var(--muted); }
+    .visual { min-height: 290px; border-radius: 20px; display: grid; place-items: center; overflow: hidden; position: relative; background: radial-gradient(circle at 50% 45%, rgba(97,244,229,.17), transparent 40%), radial-gradient(circle at 65% 70%, rgba(167,139,250,.22), transparent 38%), #0a1020; border: 1px solid var(--line); }
+    .orb { width: 145px; height: 145px; border-radius: 50%; border: 1px solid rgba(97,244,229,.7); box-shadow: 0 0 35px rgba(97,244,229,.12), inset 0 0 35px rgba(167,139,250,.15); display: grid; place-items: center; font-size: 46px; animation: float 5s ease-in-out infinite; }
+    .orb::after { content: ""; position: absolute; width: 205px; height: 205px; border: 1px solid rgba(167,139,250,.3); border-radius: 50%; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    .vision { text-align: center; padding: 55px 25px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(120deg, rgba(97,244,229,.06), rgba(167,139,250,.09)); }
+    .vision h2 { font-size: clamp(30px, 5vw, 50px); line-height: 1.12; letter-spacing: -1.8px; max-width: 740px; margin: 15px auto; }
+    .vision p { max-width: 620px; color: var(--muted); margin: 0 auto; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 18px; }
+    .reveal { animation: appear .7s ease both; }
+    @keyframes appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; } }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 30px, var(--max)); }
+      nav { min-height: 68px; }
+      .navlinks { gap: 13px; font-size: 12px; }
+      .nav-cta { display: none; }
+      .hero { padding: 75px 0 60px; }
+      h1 { letter-spacing: -2.5px; }
+      section { padding: 55px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+      .feature { grid-template-columns: 1fr; gap: 25px; padding: 22px; }
+      .visual { min-height: 230px; }
     }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #c6c6d8;
-      font-size: 0.91rem;
-      transition: color 0.25s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: white;
-    }
-
-    .nav-cta {
-      border: 1px solid rgba(168, 85, 247, 0.65);
-      border-radius: 30px;
-      padding: 9px 17px;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: transparent;
-      color: white;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      width: 43px;
-      height: 43px;
-      font-size: 1.35rem;
-      cursor: pointer;
-    }
-
-    /* ===== 3. HERO ===== */
-    .hero {
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 140px 0 90px;
-      background:
-        radial-gradient(ellipse at 75% 35%,
-          rgba(99, 45, 180, 0.18), transparent 40%),
-        radial-gradient(ellipse at 15% 75%,
-          rgba(30, 100, 200, 0.11), transparent 40%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 50px;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.8rem);
-      line-height: 1.03;
-      letter-spacing: -4px;
-      margin-bottom: 25px;
-    }
-
-    .hero-description {
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 540px;
-      margin-bottom: 32px;
-    }
-
-    .button-group {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      border-radius: 12px;
-      padding: 13px 22px;
-      font-weight: 750;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: transform 0.25s, box-shadow 0.25s,
-        background 0.25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: var(--gradient);
-      color: white;
-      box-shadow: 0 8px 30px rgba(130, 75, 255, 0.2);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 12px 38px rgba(130, 75, 255, 0.35);
-    }
-
-    .btn-secondary {
-      border-color: var(--border);
-      background: rgba(255, 255, 255, 0.035);
-      color: white;
-    }
-
-    .hero-note {
-      margin-top: 28px;
-      color: #8888a4;
-      font-size: 0.85rem;
-    }
-
-    /* Decorative IQ visual */
-    .visual-wrap {
-      display: grid;
-      place-items: center;
-      min-height: 370px;
-    }
-
-    .iq-visual {
-      width: min(330px, 75vw);
-      aspect-ratio: 1;
-      border: 1px solid rgba(169, 110, 255, 0.35);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      position: relative;
-      background: radial-gradient(circle,
-        rgba(143, 80, 255, 0.18), rgba(8, 8, 17, 0.1) 65%);
-      box-shadow: 0 0 90px rgba(130, 70, 255, 0.12),
-        inset 0 0 60px rgba(130, 70, 255, 0.08);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .iq-visual::before,
-    .iq-visual::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(90, 155, 255, 0.28);
-      border-radius: 50%;
-      transform: rotateX(65deg);
-    }
-
-    .iq-visual::after {
-      transform: rotateY(65deg);
-      border-color: rgba(180, 110, 255, 0.3);
-    }
-
-    .iq-core {
-      width: 48%;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg,
-        rgba(167, 85, 247, 0.22),
-        rgba(60, 125, 255, 0.16));
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      box-shadow: 0 0 60px rgba(150, 80, 255, 0.28);
-    }
-
-    .iq-core span {
-      font-size: 2.5rem;
-      font-weight: 950;
-      letter-spacing: -3px;
-    }
-
-    .orbit-dot {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      background: #a66aff;
-      border-radius: 50%;
-      box-shadow: 0 0 20px #a66aff;
-    }
-
-    .dot-one { top: 17%; right: 17%; }
-    .dot-two { bottom: 15%; left: 20%; background: #52a5ff; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-
-    /* ===== 4. ABOUT ===== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 55px;
-      align-items: start;
-    }
-
-    .about-card {
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      background: linear-gradient(145deg,
-        rgba(153, 91, 255, 0.09), rgba(255, 255, 255, 0.015));
-    }
-
-    .about-symbol {
-      font-size: 3rem;
-      margin-bottom: 14px;
-    }
-
-    .about-card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 8px;
-    }
-
-    .about-card p,
-    .about-copy p {
-      color: var(--muted);
-    }
-
-    .about-copy p + p {
-      margin-top: 16px;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 25px;
-    }
-
-    .skill {
-      font-size: 0.82rem;
-      padding: 7px 13px;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.035);
-      color: #d9d2ff;
-    }
-
-    /* ===== 5. PROJECTS ===== */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 19px;
-      overflow: hidden;
-      background: var(--surface);
-      transition: transform 0.3s, border-color 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(163, 103, 255, 0.55);
-    }
-
-    .project-art {
-      min-height: 175px;
-      display: grid;
-      place-items: center;
-      font-size: 3.2rem;
-      background: radial-gradient(circle at 50% 30%,
-        rgba(155, 92, 255, 0.3), transparent 65%),
-        #141425;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project-content {
-      padding: 23px;
-    }
-
-    .project-content h3 {
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-    }
-
-    .project-content p {
-      color: var(--muted);
-      font-size: 0.91rem;
-      margin-bottom: 20px;
-    }
-
-    .project-link {
-      color: #bc98ff;
-      font-size: 0.9rem;
-      font-weight: 750;
-    }
-
-    .project-link:hover {
-      color: white;
-    }
-
-    .project-tag {
-      display: inline-block;
-      color: #b7b7d4;
-      background: var(--surface-light);
-      border-radius: 6px;
-      padding: 4px 8px;
-      font-size: 0.73rem;
-      margin-bottom: 12px;
-    }
-
-    /* ===== 6. CONTACT ===== */
-    .contact-panel {
-      padding: clamp(25px, 6vw, 55px);
-      border: 1px solid rgba(158, 100, 255, 0.25);
-      border-radius: 25px;
-      background:
-        radial-gradient(ellipse at 90% 0%,
-          rgba(110, 60, 190, 0.16), transparent 55%),
-        var(--surface);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    .contact-copy p {
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .contact-details {
-      display: grid;
-      gap: 14px;
-      color: #d5d5e8;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-details a:hover {
-      color: #bd91ff;
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 15px;
-    }
-
-    .contact-form label {
-      font-size: 0.87rem;
-      color: #d3d3e7;
-    }
-
-    .field {
-      display: grid;
-      gap: 7px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 13px 15px;
-      color: white;
-      background: #0b0b16;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      outline: none;
-      resize: vertical;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: var(--purple);
-      box-shadow: 0 0 0 3px rgba(155, 92, 255, 0.1);
-    }
-
-    .form-note {
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    /* ===== 7. FOOTER ===== */
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    footer p,
-    footer a {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    .back-top {
-      color: #c3a0ff;
-    }
-
-    /* ===== 8. ANIMATIONS ===== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ===== 9. MOBILE DESIGN ===== */
-    @media (max-width: 850px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
-      }
-
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .button-group {
-        justify-content: center;
-      }
-
-      .hero-note {
-        margin-bottom: 5px;
-      }
-
-      .visual-wrap {
-        min-height: 300px;
-      }
-
-      .iq-visual {
-        width: 260px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-panel {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .section {
-        padding: 75px 0;
-      }
-
-      nav {
-        min-height: 68px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        padding: 22px 5% 26px;
-        background: #0d0d19;
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        display: block;
-        padding: 12px 0;
-      }
-
-      .nav-cta {
-        border: none;
-        padding-left: 0;
-      }
-
-      .hero {
-        padding-top: 120px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2.5px;
-        font-size: clamp(2.7rem, 12vw, 4rem);
-      }
-
-      .hero-description {
-        font-size: 0.98rem;
-      }
-
-      .visual-wrap {
-        min-height: 260px;
-      }
-
-      .iq-visual {
-        width: 225px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-art {
-        min-height: 150px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
+    @media (max-width: 420px) {
+      .brand { font-size: 12px; letter-spacing: 1px; gap: 7px; }
+      .logo { width: 32px; height: 32px; }
+      .navlinks { gap: 10px; }
+      .navlinks a { font-size: 11px; }
+      .hero-foot { gap: 12px; }
     }
   </style>
 </head>
-
-<body id="top">
-
-  <!-- NAVIGATION -->
+<body>
   <header>
-    <nav class="container" aria-label="Main navigation">
-      <a href="#home" class="logo" aria-label="INFINITE IQ home">
-        INFINITE<span>IQ.</span>
-      </a>
-
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="navLinks"
-      >☰</button>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="nav-cta">Let's Talk ↗</a></li>
-      </ul>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="INFINITE IQ home"><span class="logo">IQ</span><span>INFINITE IQ</span></a>
+      <div class="navlinks">
+        <a href="#vision">Vision</a><a href="#explore">Explore</a><a href="#projects">Projects</a><a class="nav-cta" href="#contact">Let's connect ↗</a>
+      </div>
     </nav>
   </header>
-
   <main>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <p class="eyebrow">Welcome to my world</p>
-
-          <h1>
-            Think beyond.<br>
-            Build <span class="gradient-text">infinite.</span>
-          </h1>
-
-          <p class="hero-description">
-            Welcome to INFINITE IQ — a space for big ideas, creative
-            experiments, and the next generation of digital experiences.
-            The future starts with what we build today.
-          </p>
-
-          <div class="button-group">
-            <a class="btn btn-primary" href="#projects">
-              Explore my work <span aria-hidden="true">↗</span>
-            </a>
-            <a class="btn btn-secondary" href="#about">
-              Discover my story
-            </a>
-          </div>
-
-          <p class="hero-note">One vision. Endless possibilities.</p>
-        </div>
-
-        <div class="visual-wrap reveal" aria-label="INFINITE IQ visual">
-          <div class="iq-visual">
-            <div class="iq-core"><span>IQ∞</span></div>
-            <span class="orbit-dot dot-one"></span>
-            <span class="orbit-dot dot-two"></span>
-          </div>
-        </div>
+    <section class="hero wrap" id="home">
+      <div class="reveal">
+        <div class="eyebrow"><span class="dot"></span> Ideas without limits</div>
+        <h1>Think beyond.<br><span class="gradient">Build what's next.</span></h1>
+        <p>INFINITE IQ is an emerging technology brand exploring bold ideas, intelligent tools, and digital experiences designed to make tomorrow better.</p>
+        <div class="actions"><a class="btn primary" href="#projects">Explore our ideas <span>↗</span></a><a class="btn secondary" href="#vision">Discover our vision</a></div>
+        <div class="hero-foot"><span>Creative technology</span><span>AI exploration</span><span>Built for the future</span></div>
       </div>
     </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container about-grid">
-        <div class="reveal">
-          <p class="eyebrow">A little about me</p>
-          <h2 class="section-heading">
-            Curious mind.<br>
-            <span class="gradient-text">Limitless ambition.</span>
-          </h2>
-
-          <div class="about-card">
-            <div class="about-symbol" aria-hidden="true">✦</div>
-            <h3>The INFINITE IQ mindset</h3>
-            <p>
-              Learn something new. Turn ideas into reality. Improve a
-              little every day. Never stop thinking bigger.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-copy reveal">
-          <p>
-            Hey, I'm the person behind INFINITE IQ. I'm learning,
-            creating, and exploring how technology can turn simple ideas
-            into something extraordinary.
-          </p>
-          <p>
-            This website is the beginning of my journey into web
-            development. My goal is to keep learning, build projects
-            that matter, and turn imagination into real digital products.
-          </p>
-          <p>
-            I'm not here to stay ordinary. I'm here to grow, experiment,
-            and see how far a curious mind can go.
-          </p>
-
-          <div class="skill-list" aria-label="Interests">
-            <span class="skill">Web Development</span>
-            <span class="skill">Creative Thinking</span>
-            <span class="skill">Technology</span>
-            <span class="skill">Innovation</span>
-            <span class="skill">Learning</span>
-          </div>
-        </div>
+    <section class="wrap" id="explore">
+      <div class="section-head"><div class="eyebrow">What we're exploring</div><h2>Big ideas. <span class="gradient">Useful possibilities.</span></h2><p>We bring creativity and technology together to explore new ways of solving everyday problems.</p></div>
+      <div class="grid">
+        <article class="card"><div class="icon">✳</div><h3>AI &amp; Intelligence</h3><p>Exploring how intelligent technology can help people work smarter, learn faster, and discover new possibilities.</p><span class="tag">Future in progress</span></article>
+        <article class="card"><div class="icon">⌘</div><h3>Digital Products</h3><p>Imagining simple, useful apps and online tools that turn complicated tasks into better experiences.</p><span class="tag">Ideas to products</span></article>
+        <article class="card"><div class="icon">✧</div><h3>Creative Innovation</h3><p>Testing concepts, learning new skills, and building a foundation for ambitious projects.</p><span class="tag">Think differently</span></article>
       </div>
     </section>
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="reveal">
-          <p class="eyebrow">Things I'm building</p>
-          <h2 class="section-heading">
-            Ideas made <span class="gradient-text">real.</span>
-          </h2>
-          <p class="section-description">
-            Every great project begins with an idea. Here are a few
-            concepts that represent the INFINITE IQ vision.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-
-          <article class="project-card reveal">
-            <div class="project-art" aria-hidden="true">✧</div>
-            <div class="project-content">
-              <span class="project-tag">Digital Experience</span>
-              <h3>INFINITE IQ</h3>
-              <p>
-                A modern personal brand built around creativity,
-                ambition, and limitless possibilities.
-              </p>
-              <a class="project-link" href="#home">
-                Explore this website ↗
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-art" aria-hidden="true">⌘</div>
-            <div class="project-content">
-              <span class="project-tag">Future Concept</span>
-              <h3>IQ Workspace</h3>
-              <p>
-                A concept for a clean digital space to organize ideas,
-                goals, and creative projects.
-              </p>
-              <a class="project-link" href="#contact">
-                Discuss this idea ↗
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-art" aria-hidden="true">◈</div>
-            <div class="project-content">
-              <span class="project-tag">In Development</span>
-              <h3>Next Big Idea</h3>
-              <p>
-                The next project is waiting to be imagined, designed,
-                and brought to life.
-              </p>
-              <a class="project-link" href="#contact">
-                Share an idea ↗
-              </a>
-            </div>
-          </article>
-
-        </div>
+    <section class="wrap" id="projects">
+      <div class="feature">
+        <div><div class="eyebrow">The journey starts here</div><h2>From a spark of an idea to <span class="gradient">something real.</span></h2><p>INFINITE IQ is growing step by step. This is our digital home for experiments, early concepts, and future products. The goal is simple: keep learning, keep building, and make ideas useful.</p><a class="btn secondary" href="#contact">Follow the journey ↗</a></div>
+        <div class="visual" role="img" aria-label="Abstract glowing technology artwork"><div class="orb">∞</div></div>
+      </div>
+      <div class="section-head" style="margin-top:65px"><div class="eyebrow">Our starting point</div><h2>Every great thing <span class="gradient">begins somewhere.</span></h2><p>These are the areas we're developing as the INFINITE IQ brand grows.</p></div>
+      <div class="grid">
+        <article class="card"><div class="icon">◈</div><h3>INFINITE IQ Website</h3><p>Our online home and the foundation for future ideas, products, and experiments.</p><span class="tag">Available now</span></article>
+        <article class="card"><div class="icon">⌁</div><h3>Future Apps &amp; Tools</h3><p>A growing collection of concepts for digital tools that make everyday life easier.</p><span class="tag">In exploration</span></article>
+        <article class="card"><div class="icon">◎</div><h3>What's Next</h3><p>New ideas will take shape here as we learn, create, test, and build.</p><span class="tag">Stay curious</span></article>
       </div>
     </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-panel reveal">
-
-          <div class="contact-copy">
-            <p class="eyebrow">Let's connect</p>
-            <h2 class="section-heading">
-              Have an idea?<br>
-              <span class="gradient-text">Let's talk.</span>
-            </h2>
-            <p>
-              Have a project, a question, or an idea worth exploring?
-              Send me a message and let's start a conversation.
-            </p>
-
-            <div class="contact-details">
-              <!-- Replace this with your real email address -->
-              <a href="mailto:YOUR_EMAIL@example.com">
-                ✉ YOUR_EMAIL@example.com
-              </a>
-              <a href="#top">↗ Back to the beginning</a>
-            </div>
-          </div>
-
-          <form class="contact-form" id="contactForm">
-            <div class="field">
-              <label for="name">Your name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                autocomplete="name"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label for="email">Your email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="you@example.com"
-                autocomplete="email"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label for="message">Your message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                placeholder="Tell me what's on your mind..."
-                required
-              ></textarea>
-            </div>
-
-            <button class="btn btn-primary" type="submit">
-              Prepare message ↗
-            </button>
-
-            <p class="form-note" id="formNote" aria-live="polite">
-              Your email app will open to send your message. Nothing is
-              stored or sent by this website itself.
-            </p>
-          </form>
-
-        </div>
-      </div>
+    <section class="wrap" id="vision"><div class="vision"><div class="eyebrow">The INFINITE IQ vision</div><h2>The future isn't just something we wait for. <span class="gradient">It's something we build.</span></h2><p>We're at the beginning of a long journey. With curiosity, consistent learning, and bold thinking, we're working toward a brand that turns ambitious ideas into meaningful digital experiences.</p></div></section>
+    <section class="wrap" id="contact">
+      <div class="section-head"><div class="eyebrow">Stay curious</div><h2>Have an idea? <span class="gradient">Think with us.</span></h2><p>INFINITE IQ is just getting started. Keep exploring, keep learning, and come back to see what we build next.</p><div class="actions"><a class="btn primary" href="#home">Back to the top ↑</a><a class="btn secondary" href="https://github.com/abdullahisam85/infinite-iq" target="_blank" rel="noopener noreferrer">View our GitHub ↗</a></div></div>
     </section>
-
   </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-      <a href="#home" class="logo">INFINITE<span>IQ.</span></a>
-      <p>© <span id="year"></span> INFINITE IQ. Built with ambition.</p>
-      <a href="#top" class="back-top">Back to top ↑</a>
-    </div>
-  </footer>
-
-  <script>
-    // ===== 1. MOBILE NAVIGATION =====
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-    const navItems = navLinks.querySelectorAll("a");
-
-    function closeMenu() {
-      navLinks.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open navigation menu");
-      menuToggle.textContent = "☰";
-    }
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-      );
-      menuToggle.textContent = isOpen ? "✕" : "☰";
-    });
-
-    navItems.forEach((link) => {
-      link.addEventListener("click", () => {
-        closeMenu();
-      });
-    });
-
-    // ===== 2. HIGHLIGHT THE CURRENT SECTION =====
-    const sections = document.querySelectorAll("main section[id]");
-
-    if ("IntersectionObserver" in window) {
-      const sectionObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              navItems.forEach((link) => {
-                const matches =
-                  link.getAttribute("href") === "#" + entry.target.id;
-
-                link.classList.toggle("active", matches);
-              });
-            }
-          });
-        },
-        { rootMargin: "-30% 0px -60% 0px" }
-      );
-
-      sections.forEach((section) => sectionObserver.observe(section));
-    }
-
-    // ===== 3. SCROLL REVEAL ANIMATIONS =====
-    const revealElements = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-
-      revealElements.forEach((element) => {
-        revealObserver.observe(element);
-      });
-    } else {
-      revealElements.forEach((element) => {
-        element.classList.add("visible");
-      });
-    }
-
-    // ===== 4. AUTOMATIC COPYRIGHT YEAR =====
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-    // ===== 5. CONTACT FORM =====
-    const contactForm = document.getElementById("contactForm");
-    const formNote = document.getElementById("formNote");
-
-    // Change this to your real email before using the form.
-    const contactEmail = "YOUR_EMAIL@example.com";
-
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      if (!contactForm.reportValidity()) return;
-
-      if (
-        contactEmail === "YOUR_EMAIL@example.com" ||
-        !contactEmail.includes("@")
-      ) {
-        formNote.textContent =
-          "Before sending, replace YOUR_EMAIL@example.com with your real email in the HTML and JavaScript.";
-        return;
-      }
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      const subject = encodeURIComponent(
-        "INFINITE IQ website message from " + name
-      );
-
-      const body = encodeURIComponent(
-        "Name: " + name +
-        "\nEmail: " + email +
-        "\n\nMessage:\n" + message
-      );
-
-      formNote.textContent =
-        "Opening your email app. Review your message and press Send there.";
-
-      window.location.href =
-        "mailto:" + contactEmail +
-        "?subject=" + subject +
-        "&body=" + body;
-    });
-  </script>
-
+  <footer><div class="wrap footer-inner"><a class="brand" href="#home"><span class="logo">IQ</span><span>INFINITE IQ</span></a><span>© <span id="year"></span> INFINITE IQ. Think beyond limits.</span><div class="footer-links"><a href="#vision">Vision</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
